@@ -32,9 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/authenticated", "/success").authenticated()
                 .and()
                 // Включает Form-based аутентификацию
-                //.formLogin()
-                // Включает HTTP-basic
-                .httpBasic()
+                .formLogin()
         ;
     }
 
