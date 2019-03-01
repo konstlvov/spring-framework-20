@@ -35,10 +35,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //.formLogin()
                 // Включает HTTP-basic
                 .httpBasic()
-                .and()
-                // Включает анонимную аутнетифкацию
-                // Здесь небольшая ошибка
-                .anonymous().principal("anonymous")
         ;
     }
 
