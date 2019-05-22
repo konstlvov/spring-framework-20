@@ -6,6 +6,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PagesController {
@@ -29,7 +30,8 @@ public class PagesController {
         return "authenticated";
     }
 
-    @GetMapping("/success")
+    //@GetMapping("/success")
+    @PostMapping("/success")
     public String successPage() {
         return "success";
     }

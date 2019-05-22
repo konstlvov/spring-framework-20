@@ -31,18 +31,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/public").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/authenticated", "/success").authenticated()
-                .and()
                 // Включает Form-based аутентификацию
-                //.formLogin()
-                // Включает HTTP-basic
-                .httpBasic()
                 .and()
+                .formLogin().successForwardUrl("/success") // надо ставить @PostMapping в контроллере, а то не заработает
+                // Включает HTTP-basic
+                //.and()
+                //.httpBasic()
+                //.and()
                 // Включает анонимную аутнетифкацию
                 // Здесь небольшая ошибка
-                .anonymous().principal("anonymous")
-                .and()
+                //.anonymous().principal("anonymous")
+                //.and()
                 // Включает Remember-me аутентифкацию
-                .rememberMe().key("someSecret")
+                //.rememberMe().key("someSecret")
         ;
     }
 
